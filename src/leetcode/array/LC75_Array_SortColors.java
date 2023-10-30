@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class LC75_Array_SortColors {
     public static void sortColors(int[] nums) {
+
+        // uses 3 pointers approach
         int start=0, middle=0, end=nums.length-1;
 
         while(middle <= end) {
