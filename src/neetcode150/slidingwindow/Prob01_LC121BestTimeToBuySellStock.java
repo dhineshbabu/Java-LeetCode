@@ -1,0 +1,35 @@
+package neetcode150.slidingwindow;
+
+public class Prob01_LC121BestTimeToBuySellStock {
+    /*
+    You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+     */
+    public static int maxProfit(int[] prices) {
+        // initialize variables
+        int buyStock = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        // lopp
+        for (int i = 0; i < prices.length; i++) {
+            if(buyStock < prices[i]) {
+                // calculate the profit now
+                int currProfit = prices[i] - buyStock;
+                maxProfit = Math.max(currProfit, maxProfit);
+            } else {
+                // make it as the new buy value
+                buyStock = prices[i];
+            }
+        }
+
+        return maxProfit;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {7,1,5,3,6,4};
+        System.out.println(maxProfit(prices));
+    }
+}
