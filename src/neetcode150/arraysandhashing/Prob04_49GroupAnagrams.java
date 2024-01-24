@@ -10,7 +10,7 @@ public class Prob04_49GroupAnagrams {
 
     public static List<List<String>> groupAnagrams(String [] strs) {
         // checking base
-        if(strs == null || strs.length == 0) return new ArrayList<>();
+        if(strs == null || strs.length == 0) return new ArrayList<>(new ArrayList<>());
 
         // create a map to store the values
         Map<String, List<String>> map = new HashMap<>();
@@ -40,6 +40,8 @@ public class Prob04_49GroupAnagrams {
         for(List<String> groups: groupAnagrams(strs)) {
             System.out.println(groups);
         }
+
+
     }
 
 }

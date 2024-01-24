@@ -54,6 +54,41 @@ Output: [1]
         return res;
     }
 
+    // using priorityQueue method
+
+    public static List<Integer> topKFrequentPQ(int[] nums, int k) {
+        // Step 1: Create a HashMap to store the frequency of each number
+        Map<Integer, Integer> map = new HashMap<>();
+
+        // Step 2: Populate the HashMap with the frequency of each number
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        // Step 3: Create a minHeap using PriorityQueue to keep track of the top K frequent elements
+        // The comparison is based on the frequency of elements
+        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
+                new PriorityQueue<>((a, b) -> Integer.compare(a.getValue(), b.getValue()));
+
+        // Step 4: Add entries to the minHeap and keep its size at most K
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            minHeap.add(entry);
+            if (minHeap.size() > k) {
+                minHeap.poll(); // Remove the entry with the smallest frequency
+            }
+        }
+
+        // Step 5: Retrieve the top K frequent elements from the minHeap
+        List<Integer> res = new ArrayList<>();
+        while (res.size() < k) {
+            Map.Entry<Integer, Integer> entry = minHeap.poll();
+            res.add(entry.getKey());
+        }
+
+        // Step 6: Return the final result
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 2, 2, 3};
         int k = 2;
