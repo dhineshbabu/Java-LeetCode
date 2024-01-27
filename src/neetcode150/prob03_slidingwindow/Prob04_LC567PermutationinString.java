@@ -1,4 +1,4 @@
-package neetcode150.slidingwindow;
+package neetcode150.prob03_slidingwindow;
 
 public class Prob04_LC567PermutationinString {
     /*

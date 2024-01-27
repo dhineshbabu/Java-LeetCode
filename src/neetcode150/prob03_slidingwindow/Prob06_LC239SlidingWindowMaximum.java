@@ -1,4 +1,4 @@
-package neetcode150.slidingwindow;
+package neetcode150.prob03_slidingwindow;
 import java.util.*;
 public class Prob06_LC239SlidingWindowMaximum {
     /*

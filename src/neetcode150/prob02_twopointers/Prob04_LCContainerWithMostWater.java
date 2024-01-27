@@ -1,4 +1,4 @@
-package neetcode150.twopointers;
+package neetcode150.prob02_twopointers;
 
 public class Prob04_LCContainerWithMostWater {
     /*

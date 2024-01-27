@@ -1,4 +1,4 @@
-package neetcode150.arraysandhashing;
+package neetcode150.prob01_arraysandhashing;
 
 import java.util.Arrays;
 

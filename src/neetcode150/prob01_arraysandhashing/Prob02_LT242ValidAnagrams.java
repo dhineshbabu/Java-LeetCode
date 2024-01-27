@@ -1,4 +1,4 @@
-package neetcode150.arraysandhashing;
+package neetcode150.prob01_arraysandhashing;
 
 public class Prob02_LT242ValidAnagrams {
     /*
